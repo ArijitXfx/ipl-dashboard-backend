@@ -3,14 +3,18 @@ package com.arijit.ipldashboard.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.time.LocalDate;
 
 @Getter
 @Setter
+@Entity
 public class Match {
+    @Id
     private Long id;
     private String city;
-    private LocalDateTime date;
+    private LocalDate date;
     private String playerOfMatch;
     private String venue;
     private String team1;

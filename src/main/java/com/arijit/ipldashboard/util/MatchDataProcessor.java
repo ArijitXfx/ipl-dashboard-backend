@@ -4,7 +4,7 @@ import com.arijit.ipldashboard.entity.Match;
 import com.arijit.ipldashboard.entity.MatchInput;
 import org.springframework.batch.item.ItemProcessor;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
@@ -14,7 +14,7 @@ public class MatchDataProcessor implements ItemProcessor<MatchInput, Match> {
         Match match = new Match();
         match.setId(Long.valueOf(matchInput.getId()));
         match.setCity(matchInput.getCity());
-        match.setDate(LocalDateTime.parse(matchInput.getDate(),
+        match.setDate(LocalDate.parse(matchInput.getDate(),
                 DateTimeFormatter.ofPattern("yyyy-MM-dd")));
         match.setVenue(match.getVenue());
 
